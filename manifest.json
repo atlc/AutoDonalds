@@ -1,0 +1,21 @@
+{
+  "name": "AutoDonalds",
+  "version": "1.0",
+  "description": "Automating 5-star surveys for your good experiences",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": 
+  {
+    "scripts": ["jquery-3.3.1.min.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.mcdvoice.com/*", "http://*.mcdvoice.com/*"],
+      "js": ["jquery-3.3.1.min.js", "content.js"],
+      "all_frames": true
+    }
+  ]
+}

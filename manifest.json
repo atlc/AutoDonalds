@@ -9,12 +9,12 @@
   ],
   "background": 
   {
-    "scripts": ["jquery-3.3.1.min.js", "background.js"]
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
       "matches": ["https://*.mcdvoice.com/*", "http://*.mcdvoice.com/*"],
-      "js": ["jquery-3.3.1.min.js", "content.js"],
+      "js": ["content.js"],
       "all_frames": true
     }
   ]

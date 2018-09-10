@@ -1,4 +1,4 @@
-$('document').ready(function() {
+$('document').ready(function () {
     let nextButton = document.getElementById('NextButton');
     let orderLocation = document.getElementById('R000150.1'); // At the restaurant
     let orderType = document.getElementById('R004000.3'); // Carry-out
@@ -12,7 +12,9 @@ $('document').ready(function() {
     let howWouldYouRateThisMcDonalds = document.getElementById('R000034.5'); // Much better than competitors in area
     let whichDoYouConsiderYourFavorite = document.getElementById('R059000.7'); // McDonalds
     let mcPickMenu = document.getElementById('R000279.2');
-    let $didYouReceiveWhatYouOrdered = $('#R000224.1');
+    let validationCodeFrame = document.getElementById('finishIncentiveHolder');
+
+    let $didYouReceiveWhatYouOrdered = $('#R000224.1'); // I think that this breaks the survey code validation
 
     let competitorsVisitedInPastThirtyDays = [
         document.getElementById('R058010'), // Arbys 
@@ -87,11 +89,11 @@ $('document').ready(function() {
     }
 
     if (highlySatisfieds[0] != null) {
-        highlySatisfieds.forEach(function(highlySatisfied) {
+        highlySatisfieds.forEach(function (highlySatisfied) {
             try {
                 highlySatisfied.click();
-            } 
-            catch(error) {
+            }
+            catch (error) {
                 console.error(error);
             }
         });
@@ -101,11 +103,11 @@ $('document').ready(function() {
     }
 
     if (highlySatisfiedsPartTwo[0] != null) {
-        highlySatisfiedsPartTwo.forEach(function(highlySasisfied) {
+        highlySatisfiedsPartTwo.forEach(function (highlySasisfied) {
             try {
                 highlySasisfied.click();
             }
-            catch(error) {
+            catch (error) {
                 console.error(error);
             }
         });
@@ -114,7 +116,7 @@ $('document').ready(function() {
         }, 250);
     }
 
-    if(didYouExperienceAProblem != null) {
+    if (didYouExperienceAProblem != null) {
         didYouExperienceAProblem.click();
         setTimeout(() => {
             nextButton.click();
@@ -122,7 +124,7 @@ $('document').ready(function() {
     }
 
     if (likelihoods[0] != null) {
-        likelihoods.forEach(function(lh) {
+        likelihoods.forEach(function (lh) {
             lh.click();
         });
         setTimeout(() => {
@@ -165,7 +167,7 @@ $('document').ready(function() {
     }
 
     if (visitDetails[0] != null) {
-        visitDetails.forEach(function(detail) {
+        visitDetails.forEach(function (detail) {
             detail.click();
         });
         setTimeout(() => {
@@ -205,5 +207,19 @@ $('document').ready(function() {
         setTimeout(() => {
             nextButton.click();
         }, 250);
+    }
+
+    if (validationCodeFrame != null) {
+        let codeText = document.getElementsByClassName('ValCode')[0].innerText.replace('Validation Code: ', '');
+
+        chrome.storage.local.set({'code': codeText}, () => {
+            console.log(`Added ${codeText} to codes.`)
+        });
+
+        chrome.storage.onChanged.addListener(function(changes) {
+            for (code in changes) {
+                console.log(code);
+            }
+        });
     }
 });

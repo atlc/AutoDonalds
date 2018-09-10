@@ -12,6 +12,7 @@ $('document').ready(function() {
     let howWouldYouRateThisMcDonalds = document.getElementById('R000034.5'); // Much better than competitors in area
     let whichDoYouConsiderYourFavorite = document.getElementById('R059000.7'); // McDonalds
     let mcPickMenu = document.getElementById('R000279.2');
+    let $didYouReceiveWhatYouOrdered = $('#R000224.1');
 
     let competitorsVisitedInPastThirtyDays = [
         document.getElementById('R058010'), // Arbys 
@@ -57,25 +58,32 @@ $('document').ready(function() {
         document.getElementById('R020000.4')
     ];
 
+    if ($didYouReceiveWhatYouOrdered != null) {
+        $didYouReceiveWhatYouOrdered.click();
+        setTimeout(() => {
+            nextButton.click();
+        }, 500);
+    }
+
     if (orderLocation != null) {
         orderLocation.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (orderType != null) {
         orderType.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (overallSatisfaction != null) {
         overallSatisfaction.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (highlySatisfieds[0] != null) {
@@ -89,7 +97,7 @@ $('document').ready(function() {
         });
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (highlySatisfiedsPartTwo[0] != null) {
@@ -103,14 +111,14 @@ $('document').ready(function() {
         });
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if(didYouExperienceAProblem != null) {
         didYouExperienceAProblem.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (likelihoods[0] != null) {
@@ -119,41 +127,41 @@ $('document').ready(function() {
         });
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (commentBox != null) {
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (didYouCustomizeYourSandwichOrWrap != null) {
         didYouCustomizeYourSandwichOrWrap.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (mainItemOrdered != null) {
         mainItemOrdered.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (breakfastItemOrdered != null) {
         breakfastItemOrdered.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (didYouOrderFromDollarMenu != null) {
         didYouOrderFromDollarMenu.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (visitDetails[0] != null) {
@@ -162,14 +170,14 @@ $('document').ready(function() {
         });
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (howWouldYouRateThisMcDonalds != null) {
         howWouldYouRateThisMcDonalds.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     // Randomly "eat" at between 1 and 5 competitors in past month
@@ -182,20 +190,20 @@ $('document').ready(function() {
         }
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (whichDoYouConsiderYourFavorite != null) {
         whichDoYouConsiderYourFavorite.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 
     if (mcPickMenu != null) {
         mcPickMenu.click();
         setTimeout(() => {
             nextButton.click();
-        }, 1250);
+        }, 500);
     }
 });

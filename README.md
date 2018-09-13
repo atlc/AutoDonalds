@@ -2,7 +2,7 @@
 
 ## McSurveys is a Chrome extension that sets to McAutomate the process of receipt surveys, given a specific set of conditions that best fit mine and my coworkers' average visits. 
 
-![Demo](./demo.gif)
+[Demo video on Loom](https://www.useloom.com/share/bcd8073b5613478c8c613fc50ae077b4)
 
 ### These order conditions are:
 
